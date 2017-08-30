@@ -33,11 +33,14 @@ public class ConjuntoLibros {
         for(int i =0;i<this.numlibros;i++){ 
             if(titulo.equals(libro[i].getTitulo())){
                libro[i]=null;
-               for(int j =i;j<this.numlibros;j++){
-                   libro[i+1]=libro[i];
                
-               }
-            }
+               for(int j =i;j<this.numlibros-1;j++){
+                   libro[i]=libro[i+1];
+               
+                     }
+                break;
+                 }
+           return true;
             }
        return false; 
   
