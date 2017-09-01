@@ -7,7 +7,7 @@ package libros;
 import java.util.*;
 /**
  *
- * @author El PcGamer
+ * @author Nicolas Garcia y Juan David Jaime
  */
 public class PruebaLibros {
       public static void main(String[] args) {

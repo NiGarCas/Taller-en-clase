@@ -7,7 +7,7 @@ package libros;
 
 /**
  *
- * @author Estudiante
+ * @author Nicolas Garcia y Juan David Jaime
  */
 public class ConjuntoLibros {
     private String nombre;
