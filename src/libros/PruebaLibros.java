@@ -9,17 +9,23 @@ import java.util.*;
  *
  * @author El PcGamer
  */
-public class Main {
+public class PruebaLibros {
       public static void main(String[] args) {
-     Scanner in = new Scanner (System.in);
-        ConjuntoLibros x = new ConjuntoLibros("Biblioteca central");
-        System.out.println("Bienvenidos a"+x.getNombre());
-                int continuar = 1, opcion = 0;
-        do{
+        Scanner in = new Scanner (System.in);
+        ConjuntoLibros x;
+        x = new ConjuntoLibros("Coleccion de libros");
+        System.out.println("Bienvenidos a "+x.getNombre());
+        int continuar = 1;
+        int opcion = 0;
+        while(continuar == 1){
+            System.out.println("PRUEBAS DISPONIBLES: ");
+            System.out.println("1. Agregar Libro");
             System.out.println("1. Agregar Libro");
             System.out.println("2. Eliminar Libro");
             System.out.println("3. Mostrar informacion de los libros existentes");
             System.out.println("4. Mostrar Lista de los libros existentes segun su calificacion ");
+            System.out.println(" ");
+            System.out.println("Digite el numero de prueba que desea realizar: ");
             opcion = in.nextInt();
             switch(opcion){
                 case 1:
@@ -49,15 +55,7 @@ public class Main {
                     }
                     break;
                 case 3:
-                    System.out.println("Lista de libros ");
-                    Libro[] libros= x.getLibro();
-                    for (int i = 0; i < x.getNumlibros(); i++) {
-                        System.out.println("Libro"+"0"+i);
-                        System.out.println(libros[i].getTitulo());
-                        System.out.println(libros[i].getAutor());
-                        System.out.println(libros[i].getNumeropaginas());
-                        System.out.println(libros[i].getCalificacion());
-                    }
+                    x.mostrarContenido();
                     break;
                 case 4:
                     x.mayorYmenorCalificacion();
@@ -65,9 +63,18 @@ public class Main {
                 default:
                     System.out.println("OPCION NO DISPONIBLE");
             }
-        }while(continuar == 1);
+            System.out.println("¿SALIR?");
+                System.out.println("1. SI");
+                System.out.println("2. NO");
+                int respuesta = in.nextInt();
+                switch (respuesta){
+                    case 1:
+                        continuar = 0;
+                        break;
+                    default:
+                        continuar = 1;
+                        break;
+                }
+        }
     }
 }
-      
-      
-

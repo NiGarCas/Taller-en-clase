@@ -38,7 +38,6 @@ public class ConjuntoLibros {
         this.numlibros = numlibros;
     }
  
- 
     public ConjuntoLibros(String nombre) {
         this.nombre = nombre;
         this.libro= new Libro[100];
@@ -110,15 +109,15 @@ public class ConjuntoLibros {
         }
      }
      
-    public  Libro darInformacionLibro(String nombreLibro){
-         Libro libro= null;
-         for (int i = 0; i < this.numlibros; i++) {
-           if(this.libro[i].getTitulo().equals(nombreLibro)){
-              libro = this.libro[i];
-              break;
-           }   
-         }
-        return libro;
+    public void mostrarContenido(){
+        for (int i = 0; i < this.getNumlibros(); i++) {
+            System.out.println("LIBRO "+(i+1));
+            System.out.println("Titulo: " + this.libro[i].getTitulo());
+            System.out.println("Autor: " + this.libro[i].getAutor());
+            System.out.println("Numero de paginas: " + this.libro[i].getNumeropaginas());
+            System.out.println("Calificacion dada: " + this.libro[i].getCalificacion());
+            System.out.println(" ");
+        }
     }
     
     
