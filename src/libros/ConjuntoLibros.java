@@ -12,7 +12,7 @@ package libros;
 public class ConjuntoLibros {
     private String nombre;
     private Libro[] libro;
-  private int numlibros;
+    private int numlibros;
 
     public String getNombre() {
         return nombre;
@@ -45,8 +45,9 @@ public class ConjuntoLibros {
         this.numlibros=0;
        
     }
-  public boolean agregarLibro(String titulo, String autor, int numeropaginas, int calificacion){
-      Libro libro=new Libro(titulo,autor,numeropaginas,calificacion) ;
+    
+    public boolean agregarLibro(String titulo, String autor, int numeropaginas, int calificacion){
+      Libro libro = new Libro(titulo,autor,numeropaginas,calificacion) ;
        if(this.numlibros < 100){
          this.libro[this.numlibros] = libro;
          this.numlibros++;
@@ -56,7 +57,8 @@ public class ConjuntoLibros {
        return false; 
   
   }
-   public boolean eliminarLibro(String titulo ){
+  
+    public boolean eliminarLibro(String titulo ){
        if(this.numlibros>0){
            for(int i =0;i<this.numlibros;i++){ 
             if(titulo.equals(this.libro[i].getTitulo())){
@@ -82,47 +84,32 @@ public class ConjuntoLibros {
   
   
    }
-  public void OrganizarlistaCalificacion(Libro[] libro ){
-       int cuentaintercambios=0;
-            for (boolean ordenado=false;!ordenado;){
-        for (int i = 0; this.libro[i] != null; i++){
-            if(this.libro[i].getCalificacion()> this.libro[i+1].getCalificacion()){
-                 Libro variableauxiliar=this.libro[i];
-                    this.libro[i]=this.libro[i+1];
-                    this.libro[i+1]=variableauxiliar;
-                    //indicamos que hay un cambio
-                    cuentaintercambios++;
-                    ;
-              
+   
+    public void mayorYmenorCalificacion(){
+      Libro mayor_calificacion = new Libro("nombre","autor",0,0);
+        for (int i = 0; i < this.getNumlibros(); i++){
+            if(this.libro[i].getCalificacion() > mayor_calificacion.getCalificacion()){
+                mayor_calificacion = this.libro[i];
             }
-            //Si no hay intercambios, es que esta ordenado.
-            if (cuentaintercambios==0){
-                ordenado=true;
+        }
+        if (mayor_calificacion.getCalificacion()!= 0){
+            System.out.println("Libro con mayor calificacion: " + mayor_calificacion.getTitulo() + " (" + mayor_calificacion.getCalificacion()+ ")");
+        }else{
+            System.out.println("En este momento no hay un libro con mayor calificacion que los demas");
+        }
+        Libro menor_calificacion = new Libro("nombre","autor",0,200);
+        for (int i = 0; i < this.getNumlibros(); i++){
+            if(this.libro[i].getCalificacion() < mayor_calificacion.getCalificacion()){
+                menor_calificacion = this.libro[i];
             }
-            //Inicializamos la variable de nuevo para que empiece a contar de nuevo
-            cuentaintercambios=0;
-            
-            
-                
-            }
-        
-        
-
-     }
-  
-    
+        }
+        if (menor_calificacion.getCalificacion()!= 200){
+            System.out.println("Libro con menor calificacion: " + menor_calificacion.getTitulo() + " (" + menor_calificacion.getCalificacion()+ ")");
+        }else{
+            System.out.println("En este momento no hay un libro con menor calificacion que los demas");
+        }
      }
      
-          
-            
-
-  
-  
-  
-  
-  
-    
-    
     public  Libro darInformacionLibro(String nombreLibro){
          Libro libro= null;
          for (int i = 0; i < this.numlibros; i++) {
