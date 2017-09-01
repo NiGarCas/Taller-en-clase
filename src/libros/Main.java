@@ -19,7 +19,7 @@ public class Main {
             System.out.println("1. Agregar Libro");
             System.out.println("2. Eliminar Libro");
             System.out.println("3. Mostrar informacion de los libros existentes");
-            System.out.println("4. Mostrar Lista de los libros existentes ");
+            System.out.println("4. Mostrar Lista de los libros existentes segun su calificacion ");
             opcion = in.nextInt();
             if(opcion == 1){
                 
@@ -65,10 +65,10 @@ public class Main {
             
              
             }else if(opcion ==4){
-            System.out.println("Ingrese nombre del libro");
-            String nombre = in.next();
+            System.out.println("Lista de libros segun clasifiacion");
+          
            
-           x.darInformacionLibro(nombre);
+         
           }else{  System.out.println("Opcion invalida");
            
             }
