@@ -14,6 +14,7 @@ public class Libro {
     private String autor;
     private int numeropaginas;
     private int calificacion;
+   
 
     public Libro(String titulo, String autor, int numeropaginas, int calificacion) {
         this.titulo = titulo;
