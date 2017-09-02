@@ -15,16 +15,15 @@ public class PruebaLibros {
         ConjuntoLibros x;
         x = new ConjuntoLibros("Coleccion de libros");
         System.out.println("Bienvenidos a "+x.getNombre());
+        System.out.println(" ");
         int continuar = 1;
-        int opcion = 0;
+        int opcion;
         while(continuar == 1){
             System.out.println("PRUEBAS DISPONIBLES: ");
-            System.out.println("1. Agregar Libro");
             System.out.println("1. Agregar Libro");
             System.out.println("2. Eliminar Libro");
             System.out.println("3. Mostrar informacion de los libros existentes");
             System.out.println("4. Mostrar Lista de los libros existentes segun su calificacion ");
-            System.out.println(" ");
             System.out.println("Digite el numero de prueba que desea realizar: ");
             opcion = in.nextInt();
             switch(opcion){
@@ -45,14 +44,45 @@ public class PruebaLibros {
                     }
                     break;
                 case 2:
-                    System.out.println("Titulo del Libro a eliminar");
-                    String titulo = in.next();   
-                    boolean resultado2 = x.eliminarLibro(titulo);
-                    if(resultado2 == true){
-                        System.out.println("Se elimino el libro satisfactoriamente");
-                    }else{
-                        System.out.println("Problemas en la eliminacion del libro");
+                    int titulo_autor;
+                    System.out.println("Escriba numero del criterio de busqueda del libro a eliminar:");
+                    System.out.println("1. Titulo");
+                    System.out.println("2. Autor");
+                    titulo_autor = in.nextInt();
+                    switch(titulo_autor){
+                        case 1:
+                            System.out.println("LISTA DE TITULOS:");
+                            for (int j = 0; j < x.getNumlibros(); j++){
+                                System.out.println(" - " + x.getLibro()[j].getTitulo());
+                                }
+                            System.out.println("Titulo del Libro a eliminar");
+                            String titulo = in.next();   
+                            boolean resultado2 = x.eliminarLibroTitulo(titulo);
+                            if(resultado2 == true){
+                                System.out.println("Se elimino el libro exitosamente");
+                            }else{
+                                System.out.println("Problemas en la eliminacion del libro");
+                            }
+                            break;
+                        case 2:
+                            System.out.println("LISTA DE AUTORES:");
+                            for (int j = 0; j < x.getNumlibros(); j++){
+                                System.out.println(" - " + x.getLibro()[j].getAutor());
+                                }
+                            System.out.println("Autor del Libro a eliminar");
+                            String autor = in.next();   
+                            boolean resultado3 = x.eliminarLibroAutor(autor);
+                            if(resultado3 == true){
+                                System.out.println("Se elimino el libro exitosamente");
+                            }else{
+                                System.out.println("Problemas en la eliminacion del libro");
+                            }
+                            break;
+                        default:
+                            System.out.println("Criterio de busqueda no disponible");
+                            break;
                     }
+                    
                     break;
                 case 3:
                     x.mostrarContenido();

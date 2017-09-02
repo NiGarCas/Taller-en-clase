@@ -46,7 +46,7 @@ public class ConjuntoLibros {
     }
     
     public boolean agregarLibro(String titulo, String autor, int numeropaginas, int calificacion){
-      Libro libro = new Libro(titulo,autor,numeropaginas,calificacion) ;
+      Libro libro = new Libro(titulo, autor, numeropaginas, calificacion);
        if(this.numlibros < 100){
          this.libro[this.numlibros] = libro;
          this.numlibros++;
@@ -57,32 +57,39 @@ public class ConjuntoLibros {
   
   }
   
-    public boolean eliminarLibro(String titulo ){
+    public boolean eliminarLibroTitulo(String titulo){
        if(this.numlibros>0){
            for(int i =0;i<this.numlibros;i++){ 
             if(titulo.equals(this.libro[i].getTitulo())){
              this.libro[i]=null;
-               
                for(int j =i;j<this.numlibros;j++){
                   this.libro[j]=this.libro[j+1];
-                       
                      }
-                       
-                
                  return false;
-                 
                  }
-                
              break;
            }
           this.numlibros--;
-           
        }
          return true;
-                           
-  
-  
-   }
+    }
+    
+    public boolean eliminarLibroAutor(String autor){
+       if(this.numlibros>0){
+           for(int i =0;i<this.numlibros;i++){ 
+            if(autor.equals(this.libro[i].getAutor())){
+             this.libro[i]=null;
+               for(int j =i;j<this.numlibros;j++){
+                  this.libro[j]=this.libro[j+1];
+                     }
+                 return false;
+                 }
+             break;
+           }
+          this.numlibros--;
+       }
+         return true;
+    }
    
     public void mayorYmenorCalificacion(){
       Libro mayor_calificacion = new Libro("nombre","autor",0,0);

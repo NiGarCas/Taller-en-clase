@@ -54,7 +54,7 @@ public class Main {
         }
         Tienda t = new Tienda ("Tienda", productos);
         int salir = 0;
-        int opcion = 0;
+        int opcion;
         while (salir == 0){
             System.out.println("MENU:");
         System.out.println(" ");
