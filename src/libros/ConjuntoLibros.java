@@ -59,36 +59,38 @@ public class ConjuntoLibros {
   
     public boolean eliminarLibroTitulo(String titulo){
        if(this.numlibros>0){
-           for(int i =0;i<this.numlibros;i++){ 
-            if(titulo.equals(this.libro[i].getTitulo())){
-             this.libro[i]=null;
-               for(int j =i;j<this.numlibros;j++){
-                  this.libro[j]=this.libro[j+1];
-                     }
-                 return false;
-                 }
-             break;
-           }
-          this.numlibros--;
-       }
-         return true;
+            for(int i =0;i < this.numlibros;i++){ 
+                if(titulo.equals(this.libro[i].getTitulo())){
+                    this.libro[i]=null;
+                    for(int j =i;j<this.numlibros;j++){
+                        this.libro[j]=this.libro[j+1];
+                    }
+                }
+                break;
+            }
+            this.numlibros--;
+            return true;
+        }else{
+            return false;
+       }       
     }
     
     public boolean eliminarLibroAutor(String autor){
        if(this.numlibros>0){
-           for(int i =0;i<this.numlibros;i++){ 
-            if(autor.equals(this.libro[i].getAutor())){
-             this.libro[i]=null;
-               for(int j =i;j<this.numlibros;j++){
-                  this.libro[j]=this.libro[j+1];
-                     }
-                 return false;
-                 }
-             break;
-           }
-          this.numlibros--;
-       }
-         return true;
+            for(int i =0;i < this.numlibros;i++){ 
+                if(autor.equals(this.libro[i].getAutor())){
+                    this.libro[i]=null;
+                    for(int j =i;j<this.numlibros;j++){
+                        this.libro[j]=this.libro[j+1];
+                    }
+                }
+                break;
+            }
+            this.numlibros--;
+            return true;
+        }else{
+            return false;
+       }       
     }
    
     public void mayorYmenorCalificacion(){
