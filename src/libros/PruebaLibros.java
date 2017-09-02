@@ -85,6 +85,9 @@ public class PruebaLibros {
                     
                     break;
                 case 3:
+                    if (x.getNumlibros() == 0){
+                        System.out.println("Actualmente la coleccion no tiene libros");
+                    }
                     x.mostrarContenido();
                     break;
                 case 4:
