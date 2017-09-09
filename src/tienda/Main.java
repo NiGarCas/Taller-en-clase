@@ -12,6 +12,7 @@ import java.util.*;
  */
 public class Main {
     public static void main (String [] args){
+        //Main que permite crear 4 productos, ubicarlos en la tienda, y poner a prueba los metodos y atributos de las clases Producto y Tienda
         Scanner flujoEntrada = new Scanner (System.in);
         Producto[] productos = new Producto[4];
         System.out.println("BIENVENIDO A TIENDA");

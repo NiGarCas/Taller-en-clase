@@ -10,6 +10,7 @@ import java.util.*;
  * @author Nicolas Garcia y Juan David Jaime
  */
 public class PruebaLibros {
+      //Main que prueba los metodos y atributos de las clases Libro y Conjuntolibros
       public static void main(String[] args) {
         Scanner in = new Scanner (System.in);
         ConjuntoLibros x;

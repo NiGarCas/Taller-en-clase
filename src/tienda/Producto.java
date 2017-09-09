@@ -10,7 +10,7 @@ package tienda;
  * @author Nicolas Garcia y Juan David Jaime
  */
 public class Producto {
-    
+    //Atributos de la clase Producto
     private String nombre;
     private String tipo;
     private int cantidad_actual;
@@ -18,7 +18,7 @@ public class Producto {
     private double precio_base;
     private double precio_final;
     private int cantidad_vendida;
-
+    //Getters y Setters de los atributos de la clase Producto
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -74,7 +74,7 @@ public class Producto {
     public int getCantidad_vendida() {
         return cantidad_vendida;
     }
-
+    //Constructor de la clase Producto, se inicia con cantidad vendida igual a 0, y con precio final dependiendo del tipo de producto
     public Producto(String nombre, String tipo, int cantidad_actual, int tope_minimo, double precio_base) {
         this.nombre = nombre;
         this.tipo = tipo;
