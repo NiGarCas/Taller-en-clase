@@ -62,9 +62,8 @@ public class ConjuntoLibros {
        if(this.numlibros>0){
             for(int i =0;i < this.numlibros;i++){ 
                 if(titulo.equals(this.libro[i].getTitulo())){
-                    this.libro[i]=null;
                     for(int j =i;j<this.numlibros;j++){
-                        this.libro[j]=this.libro[j+1];
+                        this.libro[j] = this.libro[j+1];
                     }
                 }
                 break;
@@ -80,7 +79,6 @@ public class ConjuntoLibros {
        if(this.numlibros>0){
             for(int i =0;i < this.numlibros;i++){ 
                 if(autor.equals(this.libro[i].getAutor())){
-                    this.libro[i]=null;
                     for(int j =i;j<this.numlibros;j++){
                         this.libro[j]=this.libro[j+1];
                     }

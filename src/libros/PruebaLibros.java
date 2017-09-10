@@ -24,7 +24,7 @@ public class PruebaLibros {
             System.out.println("1. Agregar Libro");
             System.out.println("2. Eliminar Libro");
             System.out.println("3. Mostrar informacion de los libros existentes");
-            System.out.println("4. Mostrar Lista de los libros existentes segun su calificacion ");
+            System.out.println("4. Mostrar libros con mayor y menor calificacion ");
             System.out.println("Digite el numero de prueba que desea realizar: ");
             opcion = in.nextInt();
             switch(opcion){
